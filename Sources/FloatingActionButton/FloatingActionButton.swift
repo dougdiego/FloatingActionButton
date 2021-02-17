@@ -6,13 +6,13 @@
 //
 import SwiftUI
 
-struct FloatingItem {
+public struct FloatingItem {
     let title: String
     let image: Image
     let action: () -> Void
 }
 
-struct FloatingActionButton<Parent: View>: View {
+public struct FloatingActionButton<Parent: View>: View {
     @State private var showingPrefillSheet = false
     var parent: Parent
     let title: String
@@ -26,7 +26,7 @@ struct FloatingActionButton<Parent: View>: View {
         self.items = items
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             parent
             VStack {
