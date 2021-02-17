@@ -10,6 +10,12 @@ public struct FloatingItem {
     let title: String
     let image: Image
     let action: () -> Void
+    
+    public init(title: String, image: Image, action: @escaping () -> Void) {
+        self.title = title
+        self.image = image
+        self.action = action
+    }
 }
 
 public struct FloatingActionButton<Parent: View>: View {
