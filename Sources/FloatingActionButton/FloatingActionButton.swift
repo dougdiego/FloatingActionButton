@@ -74,7 +74,7 @@ public struct FloatingActionButton<Parent: View>: View {
 }
 
 extension View {
-    func fab(title: String, image: Image, items: [FloatingItem]) -> some View {
+    public func fab(title: String, image: Image, items: [FloatingItem]) -> some View {
         FloatingActionButton(parent: self, title: title, image: image, items: items)
     }
 }
