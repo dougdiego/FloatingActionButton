@@ -75,16 +75,13 @@ struct FloatingActionButton<Parent: View>: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        VStack {
+                        VStack(alignment: .trailing) {
                             ForEach(items, id: \.id) { item in
-                                Label {
+                                HStack {
                                     Text(item.title).font(.title2)
-                                } icon: {
                                     item.image.font(.title2)
                                 }
-                                .padding(.leading)
                                 .padding(.vertical, 8)
-                                //.background(Color.red)
                                 .onTapGesture {
                                     item.action()
                                     withAnimation {

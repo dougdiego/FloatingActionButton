@@ -14,10 +14,11 @@ struct ContentView: View {
         Text("Hello, world!")
             .padding()
         }
-//        .fab(image: Image(systemName: "plus"), activeImage: Image(systemName: "plus"),  color: Color.blue.opacity(0.75), items: [
-//            FloatingItem(title: "One", image: Image(systemName: "1.circle"), action: oneAction),
-//            FloatingItem(title: "Two", image: Image(systemName: "2.circle"), action: twoAction)
-//        ])
+        .fab(image: Image(systemName: "plus"), activeImage: Image(systemName: "plus"),  color: Color.blue.opacity(0.75), items: [
+            FloatingItem(title: "Favorite", image: Image(systemName: "heart.fill"), action: oneAction),
+            FloatingItem(title: "Thumbs Up", image: Image(systemName: "hand.thumbsup.fill"), action: twoAction),
+            FloatingItem(title: "Thumbs Down", image: Image(systemName: "hand.thumbsdown.fill"), action: threeAction)
+        ])
     }
 
     
@@ -27,6 +28,10 @@ struct ContentView: View {
     
     func twoAction() {
         print("two action")
+    }
+    
+    func threeAction() {
+        print("three action")
     }
 }
 
