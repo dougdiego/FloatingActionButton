@@ -14,10 +14,10 @@ struct ContentView: View {
         Text("Hello, world!")
             .padding()
         }
-        .fab(title: "Choose", image: Image(systemName: "plus"), items: [
-            FloatingItem(title: "One", image: Image(systemName: "1.circle"), action: oneAction),
-            FloatingItem(title: "Two", image: Image(systemName: "2.circle"), action: twoAction)
-        ])
+//        .fab(image: Image(systemName: "plus"), activeImage: Image(systemName: "plus"),  color: Color.blue.opacity(0.75), items: [
+//            FloatingItem(title: "One", image: Image(systemName: "1.circle"), action: oneAction),
+//            FloatingItem(title: "Two", image: Image(systemName: "2.circle"), action: twoAction)
+//        ])
     }
 
     
