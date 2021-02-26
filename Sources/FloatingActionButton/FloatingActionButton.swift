@@ -42,7 +42,11 @@ struct FloatingActionButton<Parent: View>: View {
     
     public var body: some View {
         ZStack {
-            parent
+            if self.showingFloatingItems {
+                parent.blur(radius: 10)
+            } else {
+                parent
+            }
             VStack {
                 Spacer()
                 HStack {
@@ -78,8 +82,8 @@ struct FloatingActionButton<Parent: View>: View {
                         VStack(alignment: .trailing) {
                             ForEach(items, id: \.id) { item in
                                 HStack {
-                                    Text(item.title).font(.title2)
-                                    item.image.font(.title2)
+                                    Text(item.title).font(.headline)
+                                    item.image.font(.headline)
                                 }
                                 .padding(.vertical, 8)
                                 .onTapGesture {
