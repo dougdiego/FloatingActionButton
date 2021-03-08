@@ -104,6 +104,7 @@ struct FloatingActionButton<Parent: View>: View {
     }
 }
 
+#if !os(macOS)
 public struct FloatingActionSheetItem: Identifiable {
     public let id = UUID()
     let title: String
@@ -174,6 +175,7 @@ struct FloatingActionSheetButton<Parent: View>: View {
     }
     
 }
+#endif
 
 extension View {
     public func fab(image: Image, items: [FloatingItem]) -> some View {
@@ -184,7 +186,9 @@ extension View {
         FloatingActionButton(parent: self, image: image, activeImage: activeImage, color: color, items: items)
     }
     
+    #if !os(macOS)
     public func fasb(title: String, cancelTitle: String, image: Image, items: [FloatingActionSheetItem]) -> some View {
         FloatingActionSheetButton(parent: self, title: title, cancelTitle: cancelTitle, image: image, items: items)
     }
+    #endif
 }
